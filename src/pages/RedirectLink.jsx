@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import BarLoader from 'react-spinners/BarLoader';

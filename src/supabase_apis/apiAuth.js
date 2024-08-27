@@ -1,4 +1,5 @@
 import supabase, { supabaseUrl } from "@/db/supabase";
+import { toast } from "sonner"
 
 
 export const loginUserInSupabase = async ({email, password}) => {
@@ -16,11 +17,19 @@ export const loginUserInSupabase = async ({email, password}) => {
 
         }
 
+        toast("you have logged in successfully", {
+            position: 'top-right'
+        });
+
         return data;
                
     } catch (error) {
         
         console.log(error);
+
+        toast("Invalid Authentication or Something went Wrong.", {
+            position: 'top-right'
+        });
 
         return error;
         
@@ -61,11 +70,19 @@ export const signUpUserInSupabase = async ({ name, email, password, profile_pic 
 
         }
 
+        toast("you have signed up successfully", {
+            position: 'top-right'
+        });
+
         return data;
         
     } catch (error) {
         
         console.log(error);
+
+        toast("Invalid Authentication or Something went Wrong.", {
+            position: 'top-right'
+        });
 
         return error;
 
@@ -109,6 +126,10 @@ export const logoutUserSupabase = async () => {
 
     try {
 
+        toast("you have been logged out successfully", {
+            position: 'top-right'
+        });
+
         const { error } = await supabase.auth.signOut();
 
         if (error) {
@@ -120,6 +141,10 @@ export const logoutUserSupabase = async () => {
     } catch (error) {
         
         console.log(error);
+
+        toast("Something went Wrong.", {
+            position: 'top-right'
+        });
 
         return error;
         

@@ -8,6 +8,7 @@ import UrlGloalProvider from './context/context';
 import ProtectedRouteComponent from './components/ProtectedRouteComponent';
 import LinkUrlStatisticsPage from './pages/LinkUrlStatisticsPage';
 import RedirectLink from './pages/RedirectLink';
+import { Toaster } from './components/ui/sonner';
 
 
 const App = () => {
@@ -40,8 +41,13 @@ const App = () => {
   ]);
 
   return <UrlGloalProvider>
-    <RouterProvider router={router}>App</RouterProvider>
+
+    <RouterProvider router={router} />
+
+    <Toaster />
+
   </UrlGloalProvider>
+  
 };
 
 export default App;

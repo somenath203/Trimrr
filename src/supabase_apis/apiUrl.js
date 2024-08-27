@@ -1,5 +1,7 @@
 import supabase, { supabaseUrl } from "@/db/supabase";
 
+import { toast } from "sonner";
+
 
 export const getAllUrlsOfCurrentLoggedInUser = async (user_id) => {
 
@@ -17,11 +19,19 @@ export const getAllUrlsOfCurrentLoggedInUser = async (user_id) => {
 
         }
 
+        toast("all urls have been fetched successfully", {
+            position: 'top-right'
+        });
+
         return data;
         
     } catch (error) {
         
         console.log(error);
+
+        toast("something went wrong while fetching urls", {
+            position: 'top-right'
+        });
 
         return error;
         
@@ -67,12 +77,20 @@ export const createUrl = async ({ title_of_url, original_url, custom_url, user_i
 
         }
 
+        toast("url has been created successfully", {
+            position: 'top-right'
+        });
+
         return data;
 
 
     } catch (error) {
         
         console.log(error);
+
+        toast("something went wrong while creating url", {
+            position: 'top-right'
+        });
 
         return error;
         
@@ -96,12 +114,20 @@ export const deleteUrl = async (url_id) => {
             throw new Error(error?.message);
     
         }
+
+        toast("url has been deleted successfully", {
+            position: 'top-right'
+        });
     
         return data;
 
     } catch (error) {
         
         console.log(error);
+
+        toast("something went wrong while deleting url", {
+            position: 'top-right'
+        });
 
         return error;
 
@@ -163,6 +189,11 @@ export const getAllClicksOfTheSelectedUrl = async(url_id) => {
             throw new Error(error?.message);
                                 
         }
+
+
+        toast("all clicks of the selected url have been fetched successfully", {
+            position: 'top-right'
+        });
                                 
                                 
         return data;

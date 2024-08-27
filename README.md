@@ -2,8 +2,9 @@
 
 ## Demo video of the overall project
 
-https://www.youtube.com/watch?v=_puDioxRQ2U
+![Screenshot (695)](https://github.com/user-attachments/assets/a2404eb2-2530-48ea-bff7-1e211c1177d3)
 
+https://www.youtube.com/watch?v=_puDioxRQ2U
 
 ## Introduction
 

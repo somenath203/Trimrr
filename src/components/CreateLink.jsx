@@ -73,7 +73,7 @@ const CreateLink = () => {
         newErrors[err.path] = err.message;
       });
       setErrors(newErrors);
-      console.log(newErrors); // Debugging log
+      console.log(newErrors); 
     }
   }
 

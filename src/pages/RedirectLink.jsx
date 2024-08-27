@@ -9,8 +9,7 @@ import { findTargetUrlForRedirection, storeClicksDetailsOfUrlsOnClick } from "@/
 const RedirectLink = () => {
 
   const { id } = useParams();
-  // taking the short id of the url
-  
+
 
   const {
     data: targetUrlData,

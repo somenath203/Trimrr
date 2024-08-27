@@ -73,7 +73,7 @@ const LinkUrlPage = () => {
 
     navigator.clipboard.writeText(`${window.location.origin}/${selectedUrlOfCurrentUserData?.short_url}`);
 
-    toast("toast message successfully copied to clipboard", {
+    toast("short url has been successfully copied to clipboard", {
       position: 'top-right'
     });
     

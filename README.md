@@ -47,3 +47,9 @@ accessed, and view detailed statistics about the devices and cities from which t
 - **Yup**: Used for form validation to ensure data integrity.
 - **React (via Vite)**: The frontend framework used to build the application.
 - **IPAPI**: Used to track and display the location of clicks based on the user's IP address.
+
+## Deployment
+
+The project is deployed on Vercel.
+
+Here is the deployment link: https://trimrr-som.vercel.app/

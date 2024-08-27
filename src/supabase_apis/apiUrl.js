@@ -191,7 +191,7 @@ export const getAllClicksOfTheSelectedUrl = async(url_id) => {
         }
 
 
-        toast("all clicks of the selected url have been fetched successfully", {
+        toast("the whole statistics of the selected url have been fetched successfully", {
             position: 'top-right'
         });
                                 

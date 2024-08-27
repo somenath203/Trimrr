@@ -7,6 +7,7 @@ import BeatLoader from 'react-spinners/BeatLoader';
 import { Button } from "./ui/button";
 import useFetch from "@/hooks_for_api_calls/use-fetch";
 import { deleteUrl } from "@/supabase_apis/apiUrl";
+import { toast } from "sonner";
 
 
 const LinkCard = ({ url, executeFetchAllUrlFunction }) => {
@@ -27,6 +28,16 @@ const LinkCard = ({ url, executeFetchAllUrlFunction }) => {
     document.body.appendChild(anchorElement);
     anchorElement.click();
     document.body.removeChild(anchorElement);
+  }
+
+  const copyShortUrlToClipboard = () => {
+
+    navigator.clipboard.writeText(`${window.location.origin}/${url?.short_url}`)
+
+    toast("toast message successfully copied to clipboard", {
+      position: 'top-right'
+    });
+    
   }
     
   return (
@@ -62,7 +73,7 @@ const LinkCard = ({ url, executeFetchAllUrlFunction }) => {
 
         <Button 
           variant='ghost'
-          onClick={() => navigator.clipboard.writeText(`${window.location.origin}/${url?.short_url}`)}
+          onClick={copyShortUrlToClipboard}
         >
           <Copy />
         </Button>

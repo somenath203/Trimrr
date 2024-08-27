@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/card"
 import LocationStatisticsComponent from "@/components/LocationStatisticsComponent";
 import DeviceStatisticsComponent from "@/components/DeviceStatisticsComponent";
+import { toast } from "sonner";
 
 const LinkUrlPage = () => {
 
@@ -66,6 +67,18 @@ const LinkUrlPage = () => {
   if (selectedUrlOfCurrentUserData) {
     shortOrCustomLink = selectedUrlOfCurrentUserData.custom_url ? selectedUrlOfCurrentUserData.custom_url : selectedUrlOfCurrentUserData.short_url;
   }
+
+
+  const copyShortUrlToClipboard = () => {
+
+    navigator.clipboard.writeText(`${window.location.origin}/${selectedUrlOfCurrentUserData?.short_url}`);
+
+    toast("toast message successfully copied to clipboard", {
+      position: 'top-right'
+    });
+    
+  }
+
   
   return (
     <>
@@ -98,7 +111,7 @@ const LinkUrlPage = () => {
           <div className="flex gap-2">
             <Button 
               variant='ghost'
-              onClick={() => navigator.clipboard.writeText(`${window.location.origin}/${selectedUrlOfCurrentUserData?.short_url}`)}
+              onClick={copyShortUrlToClipboard}
             >
               <Copy />
             </Button>

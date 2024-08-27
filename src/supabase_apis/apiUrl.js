@@ -19,10 +19,6 @@ export const getAllUrlsOfCurrentLoggedInUser = async (user_id) => {
 
         }
 
-        toast("all urls have been fetched successfully", {
-            position: 'top-right'
-        });
-
         return data;
         
     } catch (error) {

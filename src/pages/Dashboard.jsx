@@ -14,7 +14,6 @@ import ErrorMessageComponent from "@/components/ErrorMessageComponent";
 import useFetch from "@/hooks_for_api_calls/use-fetch";
 import { getAllUrlsOfCurrentLoggedInUser } from "@/supabase_apis/apiUrl";
 import { UrlGlobalState } from "@/context/context";
-import { getAllClicksForUrlsOfCurrentLoggedInUser } from "@/supabase_apis/apiUrlClicks";
 import LinkCard from "@/components/LinkCard";
 import CreateLink from "@/components/CreateLink";
 
@@ -32,13 +31,7 @@ const Dashboard = () => {
     loading: allUrlsLoading
   } = useFetch(getAllUrlsOfCurrentLoggedInUser, loggedInUser?.id);
   
-  const { 
-    data: allClicks, 
-    executeCallbackFunction: executeFetchAllClicksFunction, 
-    error: clickError, 
-    loading: allClicksLoading
-  } = useFetch(getAllClicksForUrlsOfCurrentLoggedInUser, allUrls?.map((url) => url.id));
-  // here, we are passing id of all created urls by doing: allUrls?.map((url) => url.id)
+
 
   useEffect(() => {
 
@@ -54,22 +47,11 @@ const Dashboard = () => {
   });
 
 
-  useEffect(() => {
-
-    if(allUrls?.length) {
-
-      executeFetchAllClicksFunction();
-
-    }
-
-  }, [allUrls]);
-
-
   return (
     <div className="flex flex-col gap-8 p-4 md:p-8">
 
 
-     {(allUrlsLoading || allClicksLoading) && <BarLoader width={'100%'} color="#36d7b7" />}
+     {allUrlsLoading && <BarLoader width={'100%'} color="#36d7b7" />}
 
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -84,18 +66,6 @@ const Dashboard = () => {
             <p>{allUrls?.length}</p>
           </CardContent>
 
-        </Card>
-
-        <Card>
-
-          <CardHeader>
-            <CardTitle>Total Clicks</CardTitle>
-          </CardHeader>
-
-          <CardContent>
-            <p>{allClicks?.length}</p>
-          </CardContent>
-          
         </Card>
 
       </div>
@@ -125,8 +95,7 @@ const Dashboard = () => {
 
 
       {urlError && <ErrorMessageComponent message={urlError.message} />}
-      
-      {clickError && <ErrorMessageComponent message={clickError.message} />}
+
 
 
       <div className="flex flex-col gap-4">

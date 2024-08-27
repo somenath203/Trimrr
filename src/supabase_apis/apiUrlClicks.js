@@ -6,36 +6,6 @@ import supabase from "@/db/supabase";
 const parser = new UAParser();
 
 
-
-export const getAllClicksForUrlsOfCurrentLoggedInUser = async (url_id) => {
-
-    try {
-
-        const { data, error } = await supabase
-                                      .from('clicks')
-                                      .select('*')
-                                      .in('url_id', url_id)
-
-        
-        if (error) {
-
-            throw new Error(error?.message);
-
-        }
-
-        return data;
-        
-    } catch (error) {
-        
-        console.log(error);
-
-        return error;
-        
-    }
-
-}
-
-
 export const findTargetUrlForRedirection = async (short_url_or_custom_url) => {
 
     try {

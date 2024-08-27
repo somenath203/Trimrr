@@ -17,6 +17,7 @@ accessed, and view detailed statistics about the devices and cities from which t
 
 3. **Dashboard Management**:
    - View all created URLs in one place.
+   - View total number of URLs created.
    - Search for specific URLs by typing their title in the search box.
    - Click on a URL card to view detailed statistics.
 

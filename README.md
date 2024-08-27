@@ -1,5 +1,10 @@
 # Trimrr 
 
+## Demo video of the overall project
+
+https://www.youtube.com/watch?v=_puDioxRQ2U
+
+
 ## Introduction
 
 **Trimrr** is a URL shortening web application that allows users to easily create and manage short URLs. After signing up, users can generate short URLs from long ones, track from where their links are being 

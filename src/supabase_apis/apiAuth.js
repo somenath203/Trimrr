@@ -80,7 +80,7 @@ export const signUpUserInSupabase = async ({ name, email, password, profile_pic 
         
         console.log(error);
 
-        toast("Invalid Authentication or Something went Wrong.", {
+        toast("Invalid Authentication or User already exists.", {
             position: 'top-right'
         });
 

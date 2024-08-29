@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=_puDioxRQ2U
 
 ## Introduction
 
-**Trimrr** is a URL shortening web application that allows users to easily create and manage short URLs. After signing up, users can generate short URLs from long ones, track from where their links are being 
+**Trimrr** is a full stack URL shortening web application that allows users to easily create and manage short URLs. After signing up, users can generate short URLs from long ones, track from where their links are being 
 accessed, and view detailed statistics about the devices and cities from which their links are visited. With Trimrr, user can also generate QR codes for your short links, making it easy to share them.
 
 ## Features of the Application
